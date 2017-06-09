@@ -1,34 +1,16 @@
-<p id="notice"><%= notice %></p>
+<div class="large-3 small-12 column">
+  <%=image_tag @movie.poster%>
+</div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @movie.title %>
-</p>
+<div class="large-9 small-12 column">
+  <h3>
+    <%= @movie.title %>
+    (<%= @movie.release_year %>)
+    <%=link_to @movie.imdb do%>
+      <%=image_tag asset_path("imdb_logo.png")%>
+    <%end%>
+  </h3>
+  <p class="label movie-label radius mb1">$ <%= @movie.price %></p>
 
-<p>
-  <strong>Release year:</strong>
-  <%= @movie.release_year %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @movie.price %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @movie.description %>
-</p>
-
-<p>
-  <strong>Imdb:</strong>
-  <%= @movie.imdb_id %>
-</p>
-
-<p>
-  <strong>Poster url:</strong>
-  <%= @movie.poster_url %>
-</p>
-
-<%= link_to 'Edit', edit_movie_path(@movie) %> |
-<%= link_to 'Back', movies_path %>
+  <p><%= @movie.description %></p>
+</div>

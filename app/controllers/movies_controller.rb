@@ -6,6 +6,6 @@ class MoviesController < ApplicationController
 
   def show
     @movie = Movie.find(params[:id])
-    @cart_action = @movie.cart_action current_user.try :id
+    #@cart_action = @movie.cart_action current_user.try :id
   end
 end
