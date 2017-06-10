@@ -1,33 +1,36 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for(:title)? yield(:title) : "Untitled" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "MovieStore - Online movies" %></title>
+    <link rel="shortcut icon" href="<%=asset_path("logo.png")%>" >
 
-    <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+
+    <%= stylesheet_link_tag "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
     <%= csrf_meta_tags %>
   </head>
 
   <body>
 
-  <%= render "layouts/header" %>
+    <%= render "layouts/header"%>
 
-  <%= render "layouts/alerts" %>
+    <%= render "layouts/alerts" %>
 
-  <div id="main-content" class="row full-min-height">
-    <%= yield %>
-  </div>
-
-  <footer class="row">
-    <div class="large-12 columns">
-      <hr> <p>© Pata Movie 2017 </p>
+    <div id="main-content" class="row full-min-height">
+      <%= yield %>
     </div>
-  </footer>
 
-  <%= javascript_include_tag "application" %>
+    <footer class="row">
+      <div class="large-12 columns">
+        <hr>
+        <p>© Pata Movie 2017</p>
+      </div>
+    </footer>
 
-</body>
+    <%= javascript_include_tag "application" %>
+
+  </body>
 </html>
